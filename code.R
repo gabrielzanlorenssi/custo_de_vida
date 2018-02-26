@@ -10,7 +10,7 @@ library(scales)
 
 # Read xl -----------------------------------------------------------------
 
-custo <- read_excel("custo_vida.xlsx")
+custo <- read_excel("custo_vida.xlsx", sheet = "Plan1")
 IGPM <- read_excel("IGPM.xls")
 
 # Create variables --------------------------------------------------------
@@ -64,6 +64,11 @@ custo2 %>%
   scale_color_brewer(type="qual", palette = 6)
 
 
+# Calculo -----------------------------------------------------------------
+
+custo2 %>% 
+  ggplot(aes(x=date, y=perc)) +
+  geom_line()
 
 
 
